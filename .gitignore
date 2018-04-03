@@ -1,0 +1,15 @@
+# : comments
+
+# no .bin, .bak files
+*.bin
+*.bak
+
+# but do track lib.a, even though you're ignoring .a files above
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+
+# ignore all files in the build/ directory
+build/
+
+# ignore all files in the node_modules/ directory
+node_modules/
