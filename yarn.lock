@@ -2900,6 +2900,10 @@ nan@^2.3.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
+nanoid@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-1.0.2.tgz#15d2b5e76b6dbfb15cac1000cb457d4bfc845bdb"
+
 nanomatch@^1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.9.tgz#879f7150cb2dab7a471259066c104eee6e0fa7c2"
@@ -3182,6 +3186,10 @@ p-map@^1.1.1:
 p-try@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
+
+paho.mqtt.js@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/paho.mqtt.js/-/paho.mqtt.js-2.0.5.tgz#6c97143a29b30417317837880b0464226be909a3"
 
 pako@~1.0.5:
   version "1.0.6"
@@ -3730,6 +3738,12 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^2.0.0"
     inherits "^2.0.1"
+
+rsup-mqtt@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/rsup-mqtt/-/rsup-mqtt-1.0.10.tgz#bc9ae46f1a78a984d0d0976d82bd04e05a4b594a"
+  dependencies:
+    paho.mqtt.js "^2.0.5"
 
 run-async@^2.2.0:
   version "2.3.0"

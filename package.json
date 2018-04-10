@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node utils/build.js",
-    "start": "node utils/webserver.js"
+    "build": "node utils/build.js --mode production",
+    "start": "node utils/webserver.js --mode development"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,9 @@
   },
   "homepage": "https://github.com/4sizn/webrtc-poc#readme",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "nanoid": "^1.0.2",
+    "rsup-mqtt": "^1.0.10"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
@@ -31,5 +32,24 @@
     "webpack": "^4.4.1",
     "webpack-dev-server": "^3.1.1",
     "write-file-webpack-plugin": "^4.2.0"
-  }
+  },
+  "eslintConfig": {
+    "extends": "byungi",
+    "env": {
+      "worker": true
+    },
+    "globals": {
+      "chrome": true,
+      "jquery": true,
+      "$": true,
+      "sessionStorage": true
+    },
+    "rules": {
+      "un-undef": "off"
+    }
+  },
+  "eslintIgnore": [
+    "*.html",
+    "node_modules"
+  ]
 }
