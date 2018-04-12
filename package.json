@@ -27,9 +27,10 @@
     "eslint": "^4.19.1",
     "eslint-config-byungi": "^0.0.12",
     "express": "^4.16.3",
+    "file-loader": "^1.1.11",
     "fs-extra": "^5.0.0",
     "html-webpack-plugin": "^3.1.0",
-    "webpack": "^4.4.1",
+    "webpack": "^4.5.0",
     "webpack-dev-server": "^3.1.1",
     "write-file-webpack-plugin": "^4.2.0"
   },

@@ -8,13 +8,14 @@ const WriteFilePlugin = require('write-file-webpack-plugin')
 // load the secrets
 var alias = {}
 
-// var fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2']
+var fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', 'woff', 'woff2']
 
 var options = {
+  mode: 'development',
   entry: {
     // client: path.join(__dirname, 'src', 'js', 'main.js')
-    client: path.join(__dirname, 'src', 'js', 'example_client.js')
-
+    client: path.join(__dirname, 'src', 'js', 'example_client.js'),
+    host: path.join(__dirname, 'src', 'js', 'example_host.js')
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -29,6 +30,11 @@ var options = {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
         exclude: /node_modules/
+      },
+      {
+        test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
+        loader: 'file-loader?name=[name].[ext]',
+        exclude: /node_modules/
       }
     ]
   },
@@ -38,7 +44,8 @@ var options = {
     // expose and write the allowed env vars on the compiled bundle
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV),
-      'process.env.PORT': JSON.stringify(env.PORT)
+      'process.env.PORT': JSON.stringify(env.PORT),
+      'process.env.PRODUCTION_URL': JSON.stringify(env.PRODUCTION_URL)
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'client.html'),
@@ -52,8 +59,11 @@ var options = {
     }),
     new WriteFilePlugin()
   ],
+  optimization: {
+    minimize : false
+  },
   performance: {
-    hints: process.env.NODE_ENV === 'production' ? "warning" : false
+    hints: process.env.NODE_ENV === 'production' ? 'warning' : false
   }
 }
 

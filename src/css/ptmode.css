@@ -1,0 +1,181 @@
+body {
+  background-image: url(../img/img_bg_mobizen_pt_02.png);
+}
+
+#ptmode-popup {
+  position: absolute;
+  height: auto;
+  width: 190px;
+  left: 0;
+  z-index: 90;
+  top: calc(50% - 35px);
+  opacity: 1;
+}
+
+#ptmode-popup .title {
+  background-color: #333;
+  background-image: url('//www.mobizen.com/public/signin/rsupport/img/img_main_banner_mobile_booster_ico.png'), url('//www.mobizen.com/public/signin/rsupport/img/img_main_banner_download_btn.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 3% 50%, 97% 50%;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+#ptmode{
+  min-height: 920px;
+  background-image: url('../img/bg_mobile.png'), url('../img/bg_monitor.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 50% 100%, 50% 50%;
+}
+
+.ptmode-title{
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+  height: 170px;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin-bottom: 230px;
+}
+.ptmode-title strong{
+  font-weight: 400;
+  font-size: 44px;
+}
+.ptmode-title p{
+  font-size: 24px;
+}
+
+.ptmode-contents{
+  display: -ms-flexbox;
+  -webkit-display: flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -190px 0 0 -340px;
+  width: 680px;
+  height: 380px;
+  text-shadow: none;
+}
+
+.ptmode-contents .title{
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: -.5px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  white-space: nowrap;
+}
+
+.ptmode-contents .numbers{
+  height: 115px;
+  line-height: 1.2;
+}
+.ptmode-contents .numbers .numbers{
+  display: inline-block;
+  width: 370px;
+  height: 115px;
+  vertical-align: middle;
+  color: #ff4217;
+  font-size: 96px;
+  font-weight: 600;
+  font-family: sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+.ptmode-contents .numbers .btn-refresh{
+  position: relative;
+  width: 46px;
+  height: 46px;
+  margin: 0 -46px -12px 12px;
+  border-radius: 50%;
+  background-color: #ff4217;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.ptmode-contents .numbers .btn-refresh .blind{
+  position: absolute;
+  left: -999px;
+  top: -999px;
+}
+.ptmode-contents .numbers .btn-refresh:before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('../img/icon_refresh.png') no-repeat 50% 50%;
+}
+.ptmode-contents .numbers .btn-refresh:hover{
+  background-color: #ff9517;
+}
+
+.ptmode-contents .desc{
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: -.5px;
+}
+
+.ptmode-copyright{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 37px;
+  font-size: 11px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+#ptRoom{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.8);
+}
+#ptRoom video {
+  width: 100%;
+}
+
+#ptRoom button{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 101;
+  width: 25px;
+  line-height: 25px;
+  color: #fff;
+  font-size: 40px;
+}
+
+#footer #footer.has-bg{
+  background-color: rgba(0, 0, 0, .75);
+}
+
+#guideline>div{
+  height: 500px;
+}
+
+#guideline #guide_1 figure{
+  background-color: #ff4217;
+  height: 500px;
+}
+
+#guideline #guide_2 figure{
+  background-color: blue;
+  height: 500px;
+}
+
+
+#guideline #guide_3 figure{
+  background-color: yellow;
+  height: 500px;
+}

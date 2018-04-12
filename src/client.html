@@ -4,9 +4,42 @@
 </head>
 <body>
   <div class="logo-mobizen">
-    <a href="/"><img src="//www.mobizen.com/public/signin/rsupport/img/logo.png" alt="Mobizen" class="svg-img" /></a>
+    <a href="/">
+      <img src="//www.mobizen.com/public/signin/rsupport/img/logo.png" alt="Mobizen" class="svg-img" />
+    </a>
   </div>
   <main class="content-wrap">
+      <div id="fullPage-nav" class="right" style="color: rgb(0, 0, 0); margin-top: -58px;">
+          <ul>
+            <li>
+              <a href="#signin" class="signin active">
+                <span>어디서나 화면을 연결하세요 모비즌 미러링,&nbsp;당신의 스마트 라이프를 무한대로 확장합니다.</span>
+              </a>
+            </li>
+            <li>
+              <a href="#share-your-screen" class="share-your-screen">
+                <span>큰 화면으로 편리하게 즐기는 모바일 라이프 모비즌 미러링으로 편리하게 모바일 라이프를 즐기세요.</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tap-swipe-drag" class="tap-swipe-drag">
+                <span>마우스로 움직이는 폰 스크린 미러링 마우스로 스마트폰을 움직이세요. </span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#connect-your-android" class="connect-your-android">
+                <span>Web뿐 아니라 PC에서도 언제 어디서나 스마트폰을 연결하세요.</span>
+              </a>
+            </li>
+            <li>
+              <a href="#easy-started" class="easy-started">
+                <span>간단한 시작</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
     <div class="main-inner">
       <section id="ptmode">
         <div class="gnb-mobizen">
@@ -18,39 +51,120 @@
           </div>
         </div>
         <div class="link-prev">
-          <a href="/">모비즌 미러링</a>
+          <a href="https://www.mobizen.com/">모비즌 미러링</a>
         </div>
-  
+
         <div class="ptmode-title">
           <strong>심플하고 강력한 모바일 프리젠테이션</strong>
           <p>모바일 화면을 대형 화면에 띄워 프리젠테이션하세요!</p>
         </div>
-  
+
         <div class="ptmode-contents">
           <div class="title">프리젠테이션 연결 번호</div>
           <div class="numbers">
             <span class="numbers" id="authCode"></span>
-            <button type="button" class="btn-refresh" id="btnRefresh"><span class="blind">refresh button</span></button>
+            <button type="button" class="btn-refresh" id="btnRefresh">
+              <span class="blind">refresh button</span>
+            </button>
           </div>
           <div class="desc">
-            모바일 기기에서 모비즌 프리젠테이션 앱을 실행,<br>
-            프리젠테이션 연결 번호 입력만 하면 시작 됩니다.
+            모바일 기기에서 모비즌 프리젠테이션 앱을 실행,
+            <br> 프리젠테이션 연결 번호 입력만 하면 시작 됩니다.
           </div>
         </div>
-  
+
         <div id="ptmode-popup" class="banner">
-          <div class="title">안드로이드앱<br>다운로드</div>
+          <div class="title">안드로이드앱
+            <br>다운로드</div>
         </div>
-  
-        <div class="ptmode-copyright">
-          Copyright &copy; 2012 ~ 2014 RSUPPORT CO., LTD. All rights reserved.
+
+        <!-- <div class="ptmode-copyright">
+          Copyright &copy; 2012 ~ 2018 RSUPPORT CO., LTD. All rights reserved.
+        </div> -->
+      </section>
+      <section id="guideline">
+        <div id="guide_1">
+          <div class="section-content">
+              <h1>간단한 시작</h1>
+              <p>로그인 없이 6자리 연결 번호만 입력하면 간편하게 Presentation을 시작 할 수 있습니다</p>
+              <figure>
+              </figure>
+          </div>
         </div>
+        <div id="guide_2">
+            <div class="section-content">
+                <h1>간단한 시작</h1>
+                <p>로그인 없이 6자리 연결 번호만 입력하면 간편하게 Presentation을 시작 할 수 있습니다</p>
+                <figure>
+                </figure>
+            </div>
+          </div>
+          <div id="guide_3">
+              <div class="section-content">
+                  <h1>간단한 시작</h1>
+                  <p>로그인 없이 6자리 연결 번호만 입력하면 간편하게 Presentation을 시작 할 수 있습니다</p>
+                  <figure>
+                  </figure>
+              </div>
+            </div>
+      </section>
+      <section id="payment-footer">
+
       </section>
     </div>
   </main>
   <div id="ptRoom">
     <video src="#" autoplay="true"></video>
-    <button type="button" type="button">×</button>
+    <button type="button">×</button>
+    <!-- <button type="button">mute</button> -->
   </div>
 </body>
+<footer id="footer" class="has-bg">
+  <div class="footer-inner">
+    <ul class="policy">
+      <li>
+        <a href="https://play.google.com/store/apps/details?id=com.rsupport.mobizen.cn" target="_blank" class="legal go-store" onclick="ga('send', 'event', 'mmap', 'click', 'footer-click-mmapp');">
+          미러링 앱 다운로드
+        </a>
+      </li>
+      <li>
+        <a href="https://st.mobizen.com/download/mobizen.exe" target="_blank" class="legal plugin-download" onclick="ga('send', 'event', 'pc-install', 'click', 'footer-click-pc-install');">
+          Mobizen PC버전 설치
+        </a>
+      </li>
+      <li>
+        <a href="http://support-mirroring.mobizen.com/hc/ko" target="_blank" class="help" onclick="ga('send', 'event', 'helpdesk', 'go', 'footer-go-helpdesk');">
+          고객 지원
+        </a>
+      </li>
+      <li>
+        <a href="//www.youtube.com/watch?v=knI1xKpW2K8&amp;list=UUOqSCpcT_Ra0maTEwOCeCFw" target="_blank" onclick="ga('send', 'event', 'sns', 'youtube', 'footer-sns-toyoutube');">
+          <span class="youtube"></span>
+          &nbsp; YouTube
+        </a>
+      </li>
+      <li class="safe-link">
+        <a class="about-safe-browsing-link link" href="#about-safe-browsing" onclick="ga('send', 'event', 'safebrowsing', 'popup', 'footer-safebrowsing-popup');">
+          세이프 브라우징
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="language">
+      <p id="language-btn" class="open">
+        <a href="#" id="select-language"><span>Choose your language</span></a>
+      </p>
+      <ul id="language-list" style="display: block;">
+        <li class="en">
+          <a href="/?locale=en"><span>English</span></a>
+        </li>
+        <li class="ko">
+          <a href="/?locale=ko"><span>한국어</span></a>
+        </li>
+        <li class="ja">
+          <a href="/?locale=ja"><span>日本語</span></a>
+        </li>
+      </ul>
+    </div>
+</footer>
 </html>

@@ -4817,33 +4817,6 @@ img.spin {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ::-moz-selection {
   color: rgba(255,255,255,.4);
   background-color: rgba(255,149,23,.5);
@@ -5022,4 +4995,8 @@ img.spin {
   line-height: 25px;
   color: #fff;
   font-size: 40px;
+}
+
+#footer #footer.has-bg{
+  background-color: rgba(0, 0, 0, .75);
 }
