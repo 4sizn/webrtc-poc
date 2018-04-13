@@ -14,8 +14,8 @@ var options = {
   mode: 'development',
   entry: {
     // client: path.join(__dirname, 'src', 'js', 'main.js')
-    client: path.join(__dirname, 'src', 'js', 'example_client.js'),
-    host: path.join(__dirname, 'src', 'js', 'example_host.js')
+    client: path.join(__dirname, 'src', 'js', 'client.js'),
+    host: path.join(__dirname, 'src', 'js', 'host.js')
   },
   output: {
     path: path.join(__dirname, 'build'),
