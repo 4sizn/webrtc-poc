@@ -124,7 +124,7 @@ window.onload = function () {
         })
 
         console.log(sdp)
-        message = new Paho.MQTT.Message(sdp)
+        var message = new Paho.MQTT.Message(sdp)
         message.destinationName = 'MobizenPT/' + connectGuid
         client.send(message)
       })

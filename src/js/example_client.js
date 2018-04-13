@@ -10,8 +10,6 @@ import nanoid from 'nanoid'
 import './lib/mqttws31.min'
 import {post} from './restapi'
 
-'use strict'
-
 var apiHost = (!location.href.match(/172.25|localhost/)) ? '/' : '//st.mobizen.com/'
 if (['console'] === undefined || console.log === undefined) { console = {log: function () {}, info: function () {}, warn: function () {}, error: function () {}} } else if (!location.href.match(/172.25|localhost|st.mobizen.com/)) { console.log = console.info = console.warn = console.error = function () {} }
 
@@ -45,54 +43,51 @@ var mediaConstraints = {
 }
 
 function PTMode () {
-  this.$ptmode = $('#ptmode')
-  this.$authcode = $('#authCode')
-  this.$btnRefresh = $('#btnRefresh')
-  this.$ptRoom = $('#ptRoom')
+  this._$ptmode = $('#ptmode')
+  this._$authcode = $('#authCode')
+  this._$btnRefresh = $('#btnRefresh')
+  this._$ptRoom = $('#ptRoom')
 
+  this._$languageList = $('#language-list')
+  this._$selectLanguage = $('#select-language')
+
+  this._$fullpageNav = $('#fullPage-nav')
+  this._$main = $('main.content-wrap')
+  this._$scrollBody = $('main.content-wrap')
   /***********************
        * initialize
        */
-
+  this._setEvents()
   this.createAuthcode(nanoid(11))
+}
 
+PTMode.prototype._setEvents = function () {
   var self = this
-  this.$btnRefresh.on('click', function () {
-    self.ptDisconnect()
 
+  this._$btnRefresh.on('click', function () {
+    self.ptDisconnect()
     self.createAuthcode(nanoid(11))
   })
-  this.$ptRoom.find('button').on('click', function () {
-    self.$btnRefresh.trigger('click')
+  
+  this._$ptRoom.find('button').on('click', function () {
+    self._$btnRefresh.trigger('click')
   })
-}
+  // this._$languageButton.on('click', function (event) {
+  //   console.log(event)
+  //   console.log('languageButton')
+  //   event.preventDefault()
+  //   event.stopPropagation()
+  //   var isVisible = this._$languageList.is(':visible')
+  //   this._$languageList[isVisible ? 'hide' : 'show']()
+  //   this._$languageButton[isVisible ? 'removeClass' : 'addClass']('open')
+  // })
 
-PTMode.prototype.post = function (url, params, success) {
-  var settings = {
-    url: apiHost + url,
-    type: 'POST',
-    data: JSON.stringify(params),
-    dataType: 'json',
-    contentType: 'application/json; charset=utf-8'
-  }
-  if (success) {
-    settings.success = success
-  }
-  return $.ajax(settings)
-}
 
-PTMode.prototype.get = function (url, params, success) {
-  var settings = {
-    url: apiHost + url,
-    type: 'GET',
-    data: params,
-    dataType: 'json',
-    contentType: 'application/json; charset=utf-8'
-  }
-  if (success) {
-    settings.success = success
-  }
-  return $.ajax(settings)
+  // this._$selectLanguage.on('click', function (event) {
+  //   console.log("asdfasdf")
+  //   event.preventDefault()
+  //   event.stopPropagation()
+  // })
 }
 
 /***********************
@@ -101,7 +96,7 @@ PTMode.prototype.get = function (url, params, success) {
 PTMode.prototype.createAuthcode = function (_guid) {
   var self = this
 
-  this.post('receiver/pt_authcode', {receiverguid: _guid}).done(function (res) {
+  post('receiver/pt_authcode', {receiverguid: _guid}).done(function (res) {
     console.log('pt_authcode', res)
 
     if (res.retcode !== '200') {
@@ -129,7 +124,7 @@ PTMode.prototype.clientConnect = function () {
   console.log('clientConnect')
 
   var self = this
-  client = new Paho.MQTT.Client(signalServer.address, Number(signalServer.port), connectGuid) // authcode로 바꾸자
+  client = new Paho.MQTT.Client(signalServer.address, Number(signalServer.port), connectGuid)
   client.onMessageArrived = onMessageArrived
   client.onConnectionLost = onConnectionLost
 
@@ -245,7 +240,7 @@ PTMode.prototype.peerConnection = function () {
     if (pc.iceConnectionState === 'failed' ||
               pc.iceConnectionState === 'disconnected' ||
               pc.iceConnectionState === 'close') {
-      self.$btnRefresh.trigger('click')
+      self._$btnRefresh.trigger('click')
     }
   }
 
@@ -260,7 +255,7 @@ PTMode.prototype.peerConnection = function () {
 PTMode.prototype.ptStandby = function () {
   console.log('ptStandby')
 
-  this.post('receiver/pt_standby', {
+  post('receiver/pt_standby', {
     receiverguid: receiverGuid,
     authcode: authcode,
     connectguid: connectGuid,
@@ -278,7 +273,7 @@ PTMode.prototype.ptStandby = function () {
 PTMode.prototype.ptConnect = function () {
   console.log('ptConnect')
 
-  this.post('receiver/pt_connect', {
+  post('receiver/pt_connect', {
     receiverguid: receiverGuid,
     connectguid: connectGuid
   }).done(function (res) {
@@ -292,7 +287,7 @@ PTMode.prototype.ptDisconnect = function () {
   console.log('ptDisconnect')
 
   var self = this
-  this.post('receiver/pt_close', {
+  post('receiver/pt_close', {
     receiverguid: receiverGuid,
     connectguid: connectGuid
   }).done(function (res) {
@@ -313,9 +308,9 @@ PTMode.prototype.ptDisconnect = function () {
    */
 
 PTMode.prototype.displayAuthcode = function (_code) {
-  this.$ptRoom.hide()
+  this._$ptRoom.hide()
   document.querySelector('video').srcObject = null
-  this.$authcode.text(_code.slice(0, 3) + ' ' + _code.slice(3, 6))
+  this._$authcode.text(_code.slice(0, 3) + ' ' + _code.slice(3, 6))
 }
 
 PTMode.prototype.displayVideo = function (_show) {
@@ -325,20 +320,18 @@ PTMode.prototype.displayVideo = function (_show) {
   function setVideoSize () {
     video.style.width = '100%'
     video.style.height = '100%'
-    self.$ptRoom.css('padding-top', (window.clientHeight - video.clientHeight) * 0.5 + 'px')
+    self._$ptRoom.css('padding-top', (window.clientHeight - video.clientHeight) * 0.5 + 'px')
   }
 
   if (_show) {
-    this.$ptRoom.show()
+    this._$ptRoom.show()
     video.srcObject = stream
     setVideoSize()
   } else {
-    this.$ptRoom.hide()
+    this._$ptRoom.hide()
     video.srcObject = null
   }
   $(window).on('resize', setVideoSize)
 }
-
-// exports.PTMode = PTMode
 
 export default PTMode

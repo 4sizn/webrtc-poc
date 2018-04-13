@@ -1,7 +1,7 @@
 
 import $ from 'jquery'
 
-var apiHost = (!location.href.match(/172.25|localhost/)) ? '/' : '//st.mobizen.com/'
+var apiHost = process.env.PRODUCTION_URL
 
 export function get (url, params, success) {
   var settings = {

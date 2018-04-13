@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/img_bg_mobizen_pt_02.png);
+  background-image: url(../img/img_bg_mobizen_pt_05.png);
 }
 
 #ptmode-popup {
@@ -161,21 +161,51 @@ body {
 }
 
 #guideline>div{
-  height: 500px;
+  height: 700px;
+}
+
+main.content-wrap #guideline .title{
+  font-size: 36px;
+}
+
+main.content-wrap #guideline .subtitle{
+  font-size: 18px;
 }
 
 #guideline #guide_1 figure{
-  background-color: #ff4217;
+  background-image: url('../img/slide-3.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin:  35px auto 35px;
   height: 500px;
 }
 
 #guideline #guide_2 figure{
-  background-color: blue;
+  background-image: url('../img/slide-3.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin:  35px auto 35px;
   height: 500px;
 }
 
-
 #guideline #guide_3 figure{
-  background-color: yellow;
+  background-image: url('../img/slide-3.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin:  35px auto 35px;
+  height: 500px;
+}
+
+#guideline .section-content{
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+#guideline #guide_4 figure{
+  background-image: url('../img/slide-3.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  margin:  35px auto 35px;
   height: 500px;
 }
