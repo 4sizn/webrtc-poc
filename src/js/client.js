@@ -1,3 +1,3 @@
-import PTMode from './example_client'
+import PTMode from './ptmode_client'
 
 new PTMode()

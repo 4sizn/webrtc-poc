@@ -28,6 +28,7 @@ body {
   background-position: 50% 100%, 50% 50%;
 }
 
+
 .ptmode-title{
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -46,6 +47,22 @@ body {
 .ptmode-title p{
   font-size: 24px;
 }
+
+#webrtc-checker .no{
+ background-image: url("../img/mark-x.png");
+ background-repeat: no-repeat;
+ display: inline-block;
+ height: 72px;
+ width: 72px;
+}
+
+#webrtc-checker .yes{
+  background-image: url("../img/mark-check.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 72px;
+  width: 72px;
+ }
 
 .ptmode-contents{
   display: -ms-flexbox;
