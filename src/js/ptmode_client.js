@@ -5,12 +5,12 @@ import $ from 'jquery'
 import './../css/app.css'
 import './../css/ptmode.css'
 import nanoid from 'nanoid'
+import './lib/adapter'
 // import {hasWebrtc, getBrowser} from './caniuse'
 // import {connect} from 'rsup-mqtt'
 import './lib/mqttws31.min'
 import {post} from './restapi'
 
-var apiHost = (!location.href.match(/172.25|localhost/)) ? '/' : '//st.mobizen.com/'
 if (['console'] === undefined || console.log === undefined) { console = {log: function () {}, info: function () {}, warn: function () {}, error: function () {}} } else if (!location.href.match(/172.25|localhost|st.mobizen.com/)) { console.log = console.info = console.warn = console.error = function () {} }
 
 // browser compatibility
@@ -48,17 +48,24 @@ function PTMode () {
   this._$btnRefresh = $('#btnRefresh')
   this._$ptRoom = $('#ptRoom')
 
+  this._$languageBtn = $('#language-btn')
   this._$languageList = $('#language-list')
   this._$selectLanguage = $('#select-language')
 
   this._$fullpageNav = $('#fullPage-nav')
   this._$main = $('main.content-wrap')
   this._$scrollBody = $('main.content-wrap')
+  this._$webrtcIcon = $('#webrtc-icon')
   /***********************
        * initialize
        */
   this._setEvents()
+  this.webrtcSupport()
   this.createAuthcode(nanoid(11))
+}
+
+PTMode.prototype.webrtcSupport = function () {
+  RTCPeerConnection && this._$webrtcIcon.addClass('ok')
 }
 
 PTMode.prototype._setEvents = function () {
@@ -68,26 +75,22 @@ PTMode.prototype._setEvents = function () {
     self.ptDisconnect()
     self.createAuthcode(nanoid(11))
   })
-  
+
   this._$ptRoom.find('button').on('click', function () {
     self._$btnRefresh.trigger('click')
   })
-  // this._$languageButton.on('click', function (event) {
-  //   console.log(event)
-  //   console.log('languageButton')
-  //   event.preventDefault()
-  //   event.stopPropagation()
-  //   var isVisible = this._$languageList.is(':visible')
-  //   this._$languageList[isVisible ? 'hide' : 'show']()
-  //   this._$languageButton[isVisible ? 'removeClass' : 'addClass']('open')
-  // })
 
+  this._$languageBtn.on('click', function () {
+    self._$languageBtn.toggleClass('open')
+    self._$languageList[self._$languageBtn.hasClass('open') ? 'show' : 'hide']()
+  })
 
-  // this._$selectLanguage.on('click', function (event) {
-  //   console.log("asdfasdf")
-  //   event.preventDefault()
-  //   event.stopPropagation()
-  // })
+  this._$fullpageNav.find('a').on('click', function (event) {
+    self._$fullpageNav.find('a')
+      .removeClass('active')
+      .filter(event.currentTarget)
+      .addClass('active')
+  })
 }
 
 /***********************

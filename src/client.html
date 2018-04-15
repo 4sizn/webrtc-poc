@@ -25,12 +25,16 @@
         </li>
         <li>
           <a href="#guide_2" class="tap-swipe-drag">
+            <span>어디서나</span>
+          </a>
+        </li>
+        <li>
+          <a href="#guide_3" class="connect-your-android">
             <span>초고해상도 지원</span>
           </a>
         </li>
-
         <li>
-          <a href="#guide_3" class="connect-your-android">
+          <a href="#guide_4" class="connect-your-android">
             <span>효과적인 도구</span>
           </a>
         </li>
@@ -48,6 +52,9 @@
         </div>
         <div class="link-prev">
           <a href="https://www.mobizen.com/">모비즌 미러링</a>
+          <div data-i18n="title"></div>
+          <button class="lang" data-lang="en">Eng</button>
+          <button class="lang" data-lang="ch">Chi</button>
         </div>
 
         <div class="ptmode-title">
@@ -58,7 +65,7 @@
           </div>
         </div>
         <div class="ptmode-subtitle">
-        
+
         </div>
         <div class="ptmode-contents">
           <div class="title">프리젠테이션 연결 번호</div>
@@ -75,7 +82,8 @@
         </div>
 
         <div id="ptmode-popup" class="banner">
-            <a href="https://st.mobizen.com/download/MobizenPT_20180329_poc.apk" class="title">안드로이드앱<br>다운로드</a>
+          <a href="https://st.mobizen.com/download/MobizenPT_20180329_poc.apk" class="title">안드로이드앱
+            <br>다운로드</a>
         </div>
 
         <!-- <div class="ptmode-copyright">
@@ -118,9 +126,9 @@
         </div>
       </section>
       <div id="payment-footer">
-          <div>
-              ©&nbsp;RSUPPORT&nbsp;CO., LTD. All rights reserved
-            </div>
+        <div>
+          ©&nbsp;RSUPPORT&nbsp;CO., LTD. All rights reserved
+        </div>
       </div>
     </div>
   </main>
@@ -129,57 +137,57 @@
     <button type="button">×</button>
     <!-- <button type="button">mute</button> -->
   </div>
+  <footer id="footer" class="has-bg">
+    <div class="footer-inner">
+      <ul class="policy">
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.rsupport.mobizen.cn" target="_blank" class="legal go-store" onclick="ga('send', 'event', 'mmap', 'click', 'footer-click-mmapp');">
+            PT 앱 다운로드
+          </a>
+        </li>
+        <li>
+          <a href="http://support-mirroring.mobizen.com/hc/ko" target="_blank" class="help" onclick="ga('send', 'event', 'helpdesk', 'go', 'footer-go-helpdesk');">
+            고객 지원
+          </a>
+        </li>
+        <li>
+          <a href="//www.youtube.com/watch?v=knI1xKpW2K8&amp;list=UUOqSCpcT_Ra0maTEwOCeCFw" target="_blank" onclick="ga('send', 'event', 'sns', 'youtube', 'footer-sns-toyoutube');">
+            <span class="youtube"></span>
+            &nbsp; YouTube
+          </a>
+        </li>
+        <li class="safe-link">
+          <a class="about-safe-browsing-link link" href="#about-safe-browsing" onclick="ga('send', 'event', 'safebrowsing', 'popup', 'footer-safebrowsing-popup');">
+            세이프 브라우징
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="language">
+      <p id="language-btn">
+        <a href="#" id="select-language">
+          <span>Choose your language</span>
+        </a>
+      </p>
+      <ul id="language-list" style="display: none;">
+        <li class="en">
+          <a href="/?locale=en">
+            <span>English</span>
+          </a>
+        </li>
+        <li class="ko">
+          <a href="/?locale=ko">
+            <span>한국어</span>
+          </a>
+        </li>
+        <li class="ja">
+          <a href="/?locale=ja">
+            <span>日本語</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
 </body>
-<footer id="footer" class="has-bg">
-  <div class="footer-inner">
-    <ul class="policy">
-      <li>
-        <a href="https://play.google.com/store/apps/details?id=com.rsupport.mobizen.cn" target="_blank" class="legal go-store" onclick="ga('send', 'event', 'mmap', 'click', 'footer-click-mmapp');">
-          PT 앱 다운로드
-        </a>
-      </li>
-      <li>
-        <a href="http://support-mirroring.mobizen.com/hc/ko" target="_blank" class="help" onclick="ga('send', 'event', 'helpdesk', 'go', 'footer-go-helpdesk');">
-          고객 지원
-        </a>
-      </li>
-      <li>
-        <a href="//www.youtube.com/watch?v=knI1xKpW2K8&amp;list=UUOqSCpcT_Ra0maTEwOCeCFw" target="_blank" onclick="ga('send', 'event', 'sns', 'youtube', 'footer-sns-toyoutube');">
-          <span class="youtube"></span>
-          &nbsp; YouTube
-        </a>
-      </li>
-      <li class="safe-link">
-        <a class="about-safe-browsing-link link" href="#about-safe-browsing" onclick="ga('send', 'event', 'safebrowsing', 'popup', 'footer-safebrowsing-popup');">
-          세이프 브라우징
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="language">
-    <p id="language-btn" class="open">
-      <a href="#" id="select-language">
-        <span>Choose your language</span>
-      </a>
-    </p>
-    <ul id="language-list" style="display: block;">
-      <li class="en">
-        <a href="/?locale=en">
-          <span>English</span>
-        </a>
-      </li>
-      <li class="ko">
-        <a href="/?locale=ko">
-          <span>한국어</span>
-        </a>
-      </li>
-      <li class="ja">
-        <a href="/?locale=ja">
-          <span>日本語</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
 
 </html>

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/4sizn/webrtc-poc#readme",
   "dependencies": {
+    "i18next": "^11.2.2",
     "jquery": "^3.3.1",
     "nanoid": "^1.0.2",
     "rsup-mqtt": "^1.0.10"
@@ -28,6 +29,8 @@
     "eslint-config-byungi": "^0.0.12",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.20.3",
     "fs-extra": "^5.0.0",
     "html-webpack-plugin": "^3.1.0",
     "webpack": "^4.5.0",

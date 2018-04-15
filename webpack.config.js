@@ -13,7 +13,6 @@ var fileExtensions = ['jpg', 'jpeg', 'png', 'gif', 'eot', 'otf', 'svg', 'ttf', '
 var options = {
   mode: 'development',
   entry: {
-    // client: path.join(__dirname, 'src', 'js', 'main.js')
     client: path.join(__dirname, 'src', 'js', 'client.js'),
     host: path.join(__dirname, 'src', 'js', 'host.js')
   },

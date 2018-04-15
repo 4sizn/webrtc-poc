@@ -48,7 +48,7 @@ body {
   font-size: 24px;
 }
 
-#webrtc-checker .no{
+#webrtc-checker span{
  background-image: url("../img/mark-x.png");
  background-repeat: no-repeat;
  display: inline-block;
@@ -56,7 +56,7 @@ body {
  width: 72px;
 }
 
-#webrtc-checker .yes{
+#webrtc-checker .ok{
   background-image: url("../img/mark-check.png");
   background-repeat: no-repeat;
   display: inline-block;
