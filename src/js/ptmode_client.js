@@ -76,8 +76,30 @@ PTMode.prototype._setEvents = function () {
     self.createAuthcode(nanoid(11))
   })
 
-  this._$ptRoom.find('button').on('click', function () {
-    self._$btnRefresh.trigger('click')
+  this._$ptRoom.find('button').on('click', function (event) {
+    switch (event.currentTarget.id) {
+      case 'btn-viwer-flip':
+      {
+        $(event.currentTarget).toggleClass('active')
+        $('nav_lst').hide()
+        break
+      }
+      case 'btn-viewer-draw':
+      {
+        $(event.currentTarget).toggleClass('active')
+        break
+      }
+      case 'btn-viewer-mic':
+      {
+        $(event.currentTarget).toggleClass('active')
+        break
+      }
+      case 'btn-viewer-close':
+      {
+        self._$btnRefresh.trigger('click')
+        break
+      }
+    }
   })
 
   this._$languageBtn.on('click', function () {

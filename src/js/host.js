@@ -26,7 +26,7 @@ window.onload = function () {
     if (navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ audio: true, video: true })
         .then(getUserMediaSuccess).catch(function (error) {
-          if (error) { console.log('%coniceconnectionstatechange::' + pc.iceConnectionState, 'color:yellow')}
+          if (error) { console.log('%coniceconnectionstatechange::' + pc.iceConnectionState, 'color:yellow') }
         })
     } else {
       console.error('GetUserMedia not supported')
@@ -44,6 +44,7 @@ window.onload = function () {
 
         var r = JSON.parse(xhr.responseText)
         offerSdp = r.mptSessionDescription
+        console.log('offersdp', offerSdp)
         connectGuid = r.connectguid
         pcConfig = r.rtcConfig
         client = new Paho.MQTT.Client('stpush.startsupport.com', Number(4433), 'host')
@@ -143,7 +144,7 @@ window.onload = function () {
         createAnswerAndSend()
       }
     ).then(function () { console.log('publisher, set RTC session description') }
-    ).catch(function (error) { console.error('publisher, set remote des err') })
+    ).catch(function (error) { console.error('publisher, set remote des err ' + error) })
   }
 
   // called when the client loses its connection
@@ -157,14 +158,14 @@ window.onload = function () {
   function onMessageArrived (message) {
     console.log('onMessageArrived:' + message.payloadString)
 
-      var r = JSON.parse(message.payloadString)
-      if (r.host !== null && r.host !== undefined) {
+    var r = JSON.parse(message.payloadString)
+    if (r.host !== null && r.host !== undefined) {
 
     } else if (r.mptSessionDescription !== null && r.mptSessionDescription !== undefined) {
 
     } else if (r.mptIceCandidate !== null && r.mptIceCandidate !== undefined) {
       if (r.mptEndpoint.endpointID === senderGuid) return
-          pc.addIceCandidate(new RTCIceCandidate(r.mptIceCandidate))
-      }
+      pc.addIceCandidate(new RTCIceCandidate(r.mptIceCandidate))
+    }
   }
 }

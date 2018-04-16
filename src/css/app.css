@@ -7,14 +7,6 @@
  * Copyright© RSUPPORT CO., LTD. ALL RIGHTS RESERVED.
  * ------------------------------------------------------------ */
 /* css init */
-@font-face {
-  font-family: 'FontAwesome'; font-weight: normal; font-style: normal;
-  src: url('/public/font/fontawesome-webfont.eot?v=4.2.0');
-  src: url('/public/font/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
-  url('/public/font/fontawesome-webfont.woff?v=4.2.0') format('woff'),
-  url('/public/font/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),
-  url('/public/font/fontawesome-webfont.svg#fontawesomeregular?v=4.2.0') format('svg');
-}
 html,body {
   height:100%;margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;
   font-size:10px;font-family:sans-serif;position:relative;line-height:1;

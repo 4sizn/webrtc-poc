@@ -134,8 +134,22 @@
   </main>
   <div id="ptRoom">
     <video src="#" autoplay="true"></video>
-    <button type="button">×</button>
-    <!-- <button type="button">mute</button> -->
+    <div class="interface">
+      <div id="viewer_nav">
+        <div id="btn-viewer-flip">
+          <button></button>
+        </div>
+        <ul class="nav_lst">
+          <li>
+            <button type="button" id="btn-viewer-draw"></button>
+          </li>
+          <li>
+            <button type="button" id="btn-viewer-mic"></button>
+          </li>
+        </ul>
+      </div>
+      <button type="button" id="btn-viewer-close"></button>
+    </div>
   </div>
   <footer id="footer" class="has-bg">
     <div class="footer-inner">
